@@ -10,6 +10,7 @@ from docx import Document  # python-docx
 from pptx import Presentation  # python-pptx
 from sentence_transformers import SentenceTransformer
 import streamlit as st
+from streamlit_pdf_viewer import pdf_viewer
 
 # Prevent CPU thrashing by limiting backend parallel thread over-allocation
 os.environ["OMP_NUM_THREADS"] = "4"
@@ -196,9 +197,7 @@ with tab_doc:
         # PDF Preview Window block
         if is_pdf and show_preview and st.session_state.file_raw_bytes:
             with st.container(border=True):
-                base64_pdf = base64.b64encode(st.session_state.file_raw_bytes).decode('utf-8')
-                pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="100%" height="600" type="application/pdf" style="border:none; border-radius:8px;"></iframe>'
-                st.markdown(pdf_display, unsafe_allow_html=True)
+                pdf_viewer(st.session_state.file_raw_bytes)
                 
         if trigger_summary:
             with st.spinner("Generating overview summary..."):
