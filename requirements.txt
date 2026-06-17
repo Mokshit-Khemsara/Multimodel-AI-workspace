@@ -1,0 +1,12 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+streamlit
+requests
+python-dotenv
+faiss-cpu
+numpy
+Pillow
+pypdf
+python-docx
+python-pptx
+sentence-transformers
+torch

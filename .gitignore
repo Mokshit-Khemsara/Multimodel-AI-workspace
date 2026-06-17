@@ -1,0 +1,7 @@
+# Local environment variables containing your secret API keys
+.env
+
+# Python virtual environment directories
+venv/
+ENV/
+env/
