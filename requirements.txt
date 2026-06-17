@@ -11,3 +11,4 @@ python-pptx
 sentence-transformers
 torch
 torchvision
+streamlit-pdf-viewer
